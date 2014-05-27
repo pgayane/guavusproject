@@ -1,0 +1,4 @@
+javac -cp lib/hadoop-common-2.0.0-alpha.jar:lib/hadoop-mapreduce-client-core-2.0.2-alpha.jar src/* -d bin
+jar -cvf target/DistinctInfoJob.jar -C bin/ .
+
+hadoop jar target/DistinctInfoJob.jar DistinctInfoJob /home/gaya/workspace/guavusproject/data/input/test /home/gaya/workspace/guavusproject/data/distinct
