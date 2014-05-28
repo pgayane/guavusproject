@@ -1,10 +1,12 @@
 hadoop fs -mkdir -p /user/hduser/data
 hadoop fs -put /home/gaya/workspace/guavusproject/data/input data
 
-javac -cp lib/hadoop-common-2.0.0-alpha.jar:lib/hadoop-mapreduce-client-core-2.0.2-alpha.jar:lib/opencsv-2.4.jar src/* -d bin
+javac -cp lib/hadoop-common-2.0.0-alpha.jar:lib/hadoop-mapreduce-client-core-2.0.2-alpha.jar src/* -d bin
 jar -cvf target/guavusproject.jar -C bin/ .
 
 hadoop jar target/guavusproject.jar DistinctInfoJob data/input/test data/distinct
 
-hadoop jar target/guavusproject.jar ServiceSubscriberJob data/distinct data/output
-
+hadoop jar target/guavusproject.jar DistinctInfoJob data/input data/distinct
+hadoop jar target/guavusproject.jar CountJob data/distinct data/count
+hadoop jar target/guavusproject.jar IndexingJob data/count data/index
+hadoop jar target/guavusproject.jar RankJob data/index data/ranked
