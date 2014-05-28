@@ -31,6 +31,7 @@ gds1	|1237	|browsing	|201307061053
 * First of all I have removed all duplicate log lines using <code>DistinctInfoJob</code>. (the example contained duplicate line, but if you are sure that input files do not contain duplicates than you can skip this step.)
 <code>DistinctInfoJob</code> has very simple mapper which just emits every line as a key and 1 as a value. Afterwards, during grouping all duplicate lines will be group together and passed to reducer. Here reducer just emits a key for each group and the size of the group.
 The result for the above example would be:
+
 service_type (String) | subscriber id (Long) | service_name (String) | timestamp (yyyyMMddhhmm) | duplicate count
 ------- | ----- | ----------| -------------- | ---------
 gds1	|1233	|browsing	|201307061050	|1
