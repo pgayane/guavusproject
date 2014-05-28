@@ -11,7 +11,9 @@ subscriber per service_type, service_name, subscriber_id, day (yyyyMMdd).
 Using this result, the next step(s) are to sort by count and then rank them. For the ranking, you 
 need to add a column that include a fraction with the rank as the nominator and the total 
 subscriber in the segment as the denominator. See the example below.
-### example
+### Example
+service_type (String) | subscriber id (Long) | service_name (String) | timestamp (yyyyMMddhhmm) 
+--------------------- | -------------------- | --------------------- | -----------------------
 gds1	|1236	|browsing	|201307051051
 gds1	|1236	|browsing	|201307051051
 gds1	|1235	|browsing	|201307051050
